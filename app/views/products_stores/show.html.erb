@@ -1,0 +1,31 @@
+<% content_for :left do %>
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	  <b>Product:</b>
+	  <%= Product.find_by_id(@products_store.product_id).title %>
+	</p>
+
+	<p>
+	  <b>Store:</b>
+	  <%= Store.find_by_id(@products_store.store_id).name %>
+	</p>
+
+	<p>
+	  <b>Price:</b>
+	  <%= @products_store.price %>
+	</p>
+	<p>
+	  <b>Isle:</b>
+	  <%= @products_store.isle %>
+	</p>
+
+
+	<%= link_to 'Edit', edit_products_store_path(@products_store) %> |
+	<%= link_to 'Back', products_stores_path %>
+<% end %>
+
+<% content_for :right do %>
+ 
+<% end %>
+

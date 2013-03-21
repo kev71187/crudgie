@@ -1,0 +1,17 @@
+<% content_for :title do %>
+	Gluten Free Product | @product.title
+<% end %>
+<% content_for :left do %>
+	<div class="product">
+		<h4><%= @product.title %></h4>
+		<h5>$<%= @product.price %></h5>
+		<% if !@product.product_images.empty? %>
+			<div><%= image_tag @product.product_images.first.photo.url(:medium) %></div>
+		<% end %>
+		<%= link_to 'Rate this item', new_rating_path + '/' + @product.id.to_s %>
+	</div>
+<% end %>
+
+<% content_for :right do %>
+  
+<% end %>

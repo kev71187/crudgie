@@ -1,0 +1,35 @@
+<% content_for :left do %>
+  <h1>Listing products_stores</h1>
+
+  <table class="marketTable">
+    <tr>
+      <th>Product</th>
+      <th>Store</th>
+      <th>Price</th>
+      <th>Isle</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @products_stores.each do |products_store| %>
+    <tr>
+      <td><%= Product.find_by_id(products_store.product_id).title %></td>
+      <td><%= Store.find_by_id(products_store.store_id).name %></td>
+      <td><%= products_store.price %></td>
+      <td><%= products_store.isle %></td>
+      <td><%= link_to 'Show', products_store %></td>
+      <td><%= link_to 'Edit', edit_products_store_path(products_store) %></td>
+      <td><%= link_to 'Destroy', products_store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+
+  <%= link_to 'New Products store', new_products_store_path %>
+<% end %>
+
+<% content_for :right do %>
+ 
+<% end %>

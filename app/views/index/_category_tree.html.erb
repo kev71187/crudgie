@@ -1,0 +1,14 @@
+	<% @categories.each do |category|%>
+			<ul>
+				<li><%= category.name %></li>
+				<% if category.children.any? %>
+					<%= render :partial => 'category_tree', :locals => { :@categories => category.children } %>
+				<% else %>
+					<ul>
+						<% category.products.each do |product| %>
+							<li><%= link_to product.title, '/gluten_free_product/' + product.id.to_s %></li>
+						<% end %>	
+					</ul>
+				<% end %>
+			</ul>
+    <% end %>

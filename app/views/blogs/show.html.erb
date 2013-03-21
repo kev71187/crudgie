@@ -1,0 +1,30 @@
+<% content_for :left do %>
+	<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @blog.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @blog.body %>
+</p>
+
+<p>
+  <b>Product:</b>
+  <% if  !@blog.product_id.nil? %>
+  	<%= Product.find_by_id(@blog.product_id).title %>
+  <% else %>
+  	none
+  <% end %>  
+</p>
+
+
+<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Back', blogs_path %>
+<% end %>
+
+<% content_for :right do %>
+  
+<% end %>

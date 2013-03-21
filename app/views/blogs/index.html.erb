@@ -1,0 +1,39 @@
+<% content_for :left do %>
+  <h1>Listing blogs</h1>
+
+  <table class="marketTable">
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Product</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @blogs.each do |blog| %>
+    <tr>
+      <td><%= blog.title %></td>
+      <td><%= blog.body %></td>
+      <td>
+        <% if blog.product_id.nil?%>
+          <%= Product.find_by_id(blog.product_id).title %>
+        <% else %>
+          none
+        <% end%>
+      </td>
+      <td><%= link_to 'Show', blog %></td>
+      <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+      <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+
+<%= link_to 'New Blog', new_blog_path %>
+<% end %>
+
+<% content_for :right do %>
+  
+<% end %>

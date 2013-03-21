@@ -1,0 +1,169 @@
+body {
+	background-color: #E6E6FA;
+	margin:0;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding-left: 20px;
+}
+
+
+$darkRed: #541c1c;
+$logoColor: #ffffff;
+$tagLineColor: #ffffff;
+
+.logo{
+	font-weight: bold;
+	font-size: 30px;
+	color: $logoColor;
+	padding: 5px;
+	float:left;
+}
+
+.tagLine {
+	color: $tagLineColor;
+
+	position: absolute;
+	top: 10px;
+	left: 200px;
+}
+
+.container {
+	
+	
+}
+#content {
+	width: 1030px;
+	margin:0 auto;	
+}
+
+#header, #footer{
+	/*background: linear-gradient(to bottom, #8B3434 0%, #6A2929 100%) repeat scroll 0 0 transparent;*/
+    /*border-color: #A87C7C transparent #BBA4A4;*/
+    background-color: #6A2929;
+    padding: 7px 15px;
+    border-radius: 2px;
+}
+
+.menuBar {
+	float: left;
+	margin-top: 60px;
+
+	li {
+		display: inline;
+		font-size: 14px;	
+		margin-right: 2px;
+		font-weight: bold;
+		margin-right: 30px;
+		&:hover, &:active {
+			cursor: pointer;	
+			color: black;
+		}
+
+		
+		&:hover a, &.active a {
+			background-color: $darkRed;
+		}	
+	}	
+}
+
+.menuBar a, #footer a{
+	padding: 5px;
+	text-decoration: none;
+	color: #ffffff;
+	
+}
+
+.social {
+	margin-top: 5px;
+	
+	img {
+		border-radius: 3px;
+		&:hover{
+			cursor: pointer;
+		}	
+	}
+
+}
+
+.manage {
+	position: relative;	
+	ul {
+		padding:0;
+		margin:0;
+	}
+	li {
+		padding:0;
+		margin:5px 5px 5px 0;
+		display: block;
+
+	}
+}
+
+.adminPanel {
+	display: none;
+	position: absolute;
+	top: 17px;
+	left:0;
+	width: 110px;
+	background: $darkRed;
+	&:hover {
+		display: block;	
+	}
+}
+
+.social {
+	float:right;
+}
+#user_nav {
+	/*float:right;*/
+}
+
+.clear {
+	clear: both;
+  	font-size: 1px;
+}
+
+#content {
+	/*background-color: #ffffff;*/
+	padding: 0 10px;
+}
+
+#leftContent, #rightContent {
+	float:left;
+	border-radius: 2px;
+	padding: 10px;
+}
+
+#leftContent {
+	width: 750px;
+	min-height: 700px;
+	background-color: #F1F1FF;
+}
+
+#rightContent {
+	width: 230px;
+	min-height: 700px;
+	background-color: #FDDDDD;
+}
+
+#footer a{
+	
+}
+
+.marketTable {
+	border-collapse:collapse;
+
+	td {
+		margin:0;
+		padding: 5px;
+		border: lightgrey solid 1px;
+		text-align: center;
+	}
+
+	tr {
+		
+	}
+}

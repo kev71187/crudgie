@@ -1,0 +1,38 @@
+<% content_for :left do %>
+  <h1>Listing categories</h1>
+
+  <table  class="marketTable">
+    <tr>
+      <th>Name</th>
+      <th>Parent</th>
+      <th>Count</th>
+      <th></th>
+      <th></th>
+    </tr>
+
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.name %></td>
+      <td>
+      <% if !(category.parent_category.nil?)  %>
+        <%= category.parent_category.name %>
+      <% else %>
+        none
+      <% end %>
+      
+      </td>
+      <td><%= link_to 'Show', category %></td>
+      <td><%= link_to 'Edit', edit_category_path(category) %></td>
+      <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <br />
+
+  <%= link_to 'New Category', new_category_path %>
+<% end %>
+
+<% content_for :right do %>
+  
+<% end %>

@@ -1,0 +1,38 @@
+<% content_for :title do %>
+	Recent Gluten Free Articles
+<% end %>
+<% content_for :left do %>
+	<% @blogs.each do |blog|%>
+	<div class="front_blog">
+		<div class="blog">
+			<h2><%= blog.title %></h2>
+			<p><%=raw blog.body %></p>
+			<%= link_to 'Add comment', new_comment_path + '/' + blog.id.to_s %>
+			<p>
+				<h4>Comments (<%= blog.comments.count %>)</h4>
+				<% blog.comments.limit(2).each do |comment| %>
+				<p>
+					<%= comment.body %>
+					<%= comment.user.username %>
+				<% end %>
+			</p>
+			</p>
+		</div>
+		<div class="product">
+			<h4><%= blog.product.title %></h4>
+			<% if !blog.product.product_images.empty? %>
+				<div>
+					<a href="/gluten_free_product/<%= blog.product.id %>"><%= image_tag blog.product.product_images.first.photo.url(:medium) %></a>
+				</div>
+			<% end %>		
+			<h5>$<%= blog.product.price %></h5>
+			<%= link_to 'Rate this item', new_rating_path + '/' + blog.product.id.to_s %>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<% end %>	
+<% end %>
+
+<% content_for :right do %>
+  
+<% end %>

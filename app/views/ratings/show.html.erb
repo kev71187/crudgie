@@ -1,0 +1,37 @@
+<% content_for :left do %>
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <b>User:</b>
+    <%= @rating.user_id %>
+  </p>
+
+  <p>
+    <b>Rating:</b>
+    <%= @rating.rating %>
+  </p>
+
+  <p>
+    <b>Product:</b>
+    <%= @rating.product_id %>
+  </p>
+
+  <p>
+    <b>Comment:</b>
+    <%= @rating.comment %>
+  </p>
+
+  <p>
+    <b>Admin:</b>
+    <%= @rating.admin %>
+  </p>
+
+
+  <%= link_to 'Edit', edit_rating_path(@rating) %> |
+  <%= link_to 'Back', ratings_path %>
+
+<% end %>
+
+<% content_for :right do %>
+ 
+<% end %>
